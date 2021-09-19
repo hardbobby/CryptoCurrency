@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+       android:id="@+id/pull_to_refresh"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toTopOf="@id/linear_layout_progress_bottom"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recycler_view_crypto_data"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:visibility="gone"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          tools:itemCount="5"
+          tools:listitem="@layout/item_watch_list"
+          tools:visibility="visible" />
+
+   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+   <LinearLayout
+       android:id="@+id/linear_layout_progress_bottom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom"
+       android:background="@color/gray_200"
+       android:gravity="center"
+       android:padding="8dp"
+       android:visibility="gone"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       tools:visibility="visible">
+
+      <ProgressBar
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:layout_marginEnd="16dp"
+          android:indeterminateTint="@color/colorPrimary" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/label_load_more" />
+   </LinearLayout>
+
+   <TextView
+       android:id="@+id/text_view_error_message"
+       style="@style/Body1.Medium"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/label_no_available_information"
+       android:visibility="gone"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <include
+       android:id="@+id/view_loading_shimmer"
+       layout="@layout/view_shimmer_list"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginHorizontal="16dp"
+       android:layout_marginTop="12dp"
+       android:visibility="visible"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

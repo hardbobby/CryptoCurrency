@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">CryptoCurrencyApp</string>
+
+
+    <string name="sign_in_facebook_title">Login with Facebook</string>
+    <string name="sign_in_google_title">Login with Google</string>
+    <string name="sign_up_facebook_title">Sign up with Facebook</string>
+    <string name="sign_up_google_title">Sign up with Google</string>
+    <string name="label_no_available_information">Tidak ada data yang ditampilkan</string>
+    <string name="error_message_load_data">Problem occurred because of : %s</string>
+    <string name="label_or">Atau</string>
+    <string name="label_login_fingerprint">Login with Fingerprint</string>
+    <string name="label_login">Login</string>
+    <string name="label_forgot_password">Forgot Password</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_username_or_email">Username or Email</string>
+    <string name="label_register_now">Don\'t have an account yet?  <font color='#00AB6D'>Register Now</font></string>
+    <string name="label_suspended">Suspended</string>
+    <string name="changes_info">%1$s (%2$s%%)</string>
+    <string name="label_log_out">Log Out</string>
+    <string name="watch_list_label">Watch List</string>
+    <string name="data_feed_label">Data Feed</string>
+    <string name="account_label">Account</string>
+    <string name="eth_label">ETH</string>
+    <string name="doge_label">DOGE</string>
+    <string name="price_placeholder">0</string>
+    <string name="msg_error_hint_invalid_email">Alamat email tidak valid</string>
+    <string name="label_load_more">Lainnya</string>
+</resources>

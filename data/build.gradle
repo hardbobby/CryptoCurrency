@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation  project(':domain')
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGson
+
+    //Coroutines
+    implementation Dependencies.coroutinesCore
+    implementation Dependencies.coroutinesAndroid
+
+    implementation Dependencies.runTimeRoom
+    implementation Dependencies.extensionRoom
+    annotationProcessor Dependencies.compilerRoom
+    kapt Dependencies.compilerRoom
+
+    // Hilt
+    implementation Dependencies.hiltDagger
+    kapt Dependencies.hiltDaggerCompiler
+    kapt Dependencies.hiltCompiler
+
+    //Scarlet
+    implementation Dependencies.scarletBase
+    implementation Dependencies.scarletStream
+    implementation Dependencies.scarletMessage
+    implementation Dependencies.scarletLifeCycle
+    implementation Dependencies.scarletProtocol
+
+    // For instrumented tests.
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    // ...with Kotlin.
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+}

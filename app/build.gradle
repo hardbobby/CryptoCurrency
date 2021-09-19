@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk Config.targetSdkVersion
+    defaultConfig {
+        applicationId Config.applicationId
+        minSdk Config.minSdkVersion
+        targetSdk Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = Version.jvmTarget
+    }
+    ndkVersion Version.ndkVersion
+}
+
+dependencies {
+
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation Dependencies.coreAndroidx
+    implementation Dependencies.appCompactAndroidx
+
+    implementation Dependencies.materialDesign
+    implementation Dependencies.constraintLayout
+
+    // Hilt
+    implementation Dependencies.hiltDagger
+    implementation Dependencies.legacySupport
+    kapt Dependencies.hiltDaggerCompiler
+    implementation Dependencies.hiltDaggerViewModel
+    kapt Dependencies.hiltCompiler
+
+    // Retrofit
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGson
+    implementation Dependencies.okHttpInterceptor
+
+    // Fragment KTX
+    implementation Dependencies.activityKtx
+    implementation Dependencies.fragmentKtx
+
+    //LifeCycle Common
+    implementation Dependencies.lifeCycleCommonAndroidx
+    implementation Dependencies.lifeCycleViewModel
+
+
+    //Scarlet
+    implementation Dependencies.scarletBase
+    implementation Dependencies.scarletStream
+    implementation Dependencies.scarletMessage
+    implementation Dependencies.scarletLifeCycle
+    implementation Dependencies.scarletProtocol
+
+
+    //Coroutines
+    implementation Dependencies.coroutinesCore
+    implementation Dependencies.coroutinesAndroid
+
+
+    //SharePref
+    implementation Dependencies.sharePref
+
+    //Validator
+    implementation Dependencies.validator
+
+    //Shimmer
+    implementation Dependencies.shimmer
+
+    //Navigation
+    implementation Dependencies.navigationFragment
+    implementation Dependencies.navigationUiKtx
+
+
+}

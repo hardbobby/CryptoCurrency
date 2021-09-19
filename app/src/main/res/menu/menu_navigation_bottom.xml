@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/watchListFragment"
+        android:icon="@drawable/ic_data_list"
+        android:title="@string/watch_list_label"/>
+    <item
+        android:id="@+id/dataFeedFragment"
+        android:icon="@drawable/ic_data"
+        android:title="@string/data_feed_label"/>
+    <item
+        android:id="@+id/accountFragment"
+        android:icon="@drawable/ic_user"
+        android:title="@string/account_label"/>
+
+</menu>
