@@ -1,4 +1,4 @@
-"CryptoCurrency App" 
+"CryptoCurrency App"
 
 Android App using CryptoCompare DB
 
@@ -19,3 +19,9 @@ a simple app that contains some basic functionality. It connects to the Crypto R
 - NDK Cmake Keys Security
 - Gradle Management Dependency
 - Room - Used to provide cache database
+- Multi Module Layer
+-
+
+## Architecure Overview
+
+<img src="https://user-images.githubusercontent.com/8085770/133979726-b21cfe3a-7f12-4f69-99b4-ded8c50f8e2d.png" style="background-color:white">
