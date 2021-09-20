@@ -11,7 +11,6 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
     }
 
     buildTypes {
@@ -40,7 +39,7 @@ dependencies {
     implementation Dependencies.coroutinesCore
     implementation Dependencies.coroutinesAndroid
 
-    implementation Dependencies.runTimeRoom
+    api Dependencies.runTimeRoom
     implementation Dependencies.extensionRoom
     annotationProcessor Dependencies.compilerRoom
     kapt Dependencies.compilerRoom
@@ -56,9 +55,4 @@ dependencies {
     implementation Dependencies.scarletMessage
     implementation Dependencies.scarletLifeCycle
     implementation Dependencies.scarletProtocol
-
-    // For instrumented tests.
-    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
-    // ...with Kotlin.
-    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
 }

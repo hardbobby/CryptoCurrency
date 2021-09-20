@@ -15,6 +15,7 @@ import com.hardbobby.cryptocurrencyapp.presentation.main.view.MainActivity
 import com.hardbobby.cryptocurrencyapp.presentation.utils.LoginFlow
 import com.hardbobby.cryptocurrencyapp.presentation.utils.ValidationHelper.assertEmail
 import com.hardbobby.cryptocurrencyapp.presentation.utils.ValidationHelper.assertNotEmpty
+import com.hardbobby.cryptocurrencyapp.presentation.utils.showSuccessSnackbar
 import com.hardbobby.cryptocurrencyapp.presentation.utils.showToastMessage
 import dagger.hilt.android.AndroidEntryPoint
 import observeEvent
@@ -38,7 +39,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
         viewModel.snackbarMessage().observeEvent(viewLifecycleOwner,
             {
-                binding.root.showToastMessage(it)
+                binding.root.showSuccessSnackbar(it)
             }
         )
     }
@@ -63,7 +64,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun navigateToWatchList() {
-        val action = LoginFragmentDirections.actionLoginFragmentToWatchListFragment()
+        val action = LoginFragmentDirections.actionLoginToWatchList()
         if (findNavController().currentDestination?.id == R.id.loginFragment) {
             findNavController().navigate(action)
         }

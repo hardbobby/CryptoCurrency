@@ -12,6 +12,6 @@ class MainHomeViewModel @Inject constructor(
 
     fun onUserSignOut() {
         userManager.endUserSession()
-        postSnackbar("Success logout")
+        postSnackbar("Berhasil Logout")
     }
 }

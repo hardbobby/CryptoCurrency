@@ -13,7 +13,7 @@ import com.hardbobby.cryptocurrencyapp.databinding.ActivityMainBinding
 import com.hardbobby.cryptocurrencyapp.presentation.main.viewmodel.MainHomeViewModel
 import com.hardbobby.cryptocurrencyapp.presentation.utils.setGone
 import com.hardbobby.cryptocurrencyapp.presentation.utils.setVisible
-import com.hardbobby.cryptocurrencyapp.presentation.utils.showToastMessage
+import com.hardbobby.cryptocurrencyapp.presentation.utils.showSuccessSnackbar
 import com.hardbobby.cryptocurrencyapp.presentation.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import observeEvent
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpObserver() {
         viewModel.snackbarMessage().observeEvent(this) { message ->
-            binding.root.showToastMessage(message)
+            binding.root.showSuccessSnackbar(message)
         }
     }
 
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val navigationController = navHostFragment.findNavController()
         val currentDestId = navigationController.currentDestination?.id
-        if (currentDestId == R.id.watchListFragment || currentDestId == R.id.loginFragment) {
+        if (currentDestId == R.id.watchListFragment || currentDestId == R.id.loginFragment || currentDestId == R.id.accountFragment) {
             finish()
         } else {
             super.onBackPressed()

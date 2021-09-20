@@ -8,10 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.hardbobby.cryptocurrencyapp.R
 import com.hardbobby.cryptocurrencyapp.databinding.FragmentWatchListBinding
 import com.hardbobby.cryptocurrencyapp.presentation.base.viewBinding
-import com.hardbobby.cryptocurrencyapp.presentation.utils.setGone
-import com.hardbobby.cryptocurrencyapp.presentation.utils.setVisible
-import com.hardbobby.cryptocurrencyapp.presentation.utils.showIf
-import com.hardbobby.cryptocurrencyapp.presentation.utils.showSlidingIf
+import com.hardbobby.cryptocurrencyapp.presentation.utils.*
 import com.hardbobby.cryptocurrencyapp.presentation.watchlist.adapter.WatchListAdapter
 import com.hardbobby.cryptocurrencyapp.presentation.watchlist.viewmodel.WatchListViewModel
 import com.hardbobby.domain.common.Result
@@ -75,6 +72,7 @@ class WatchListFragment : Fragment(R.layout.fragment_watch_list) {
                 onFinishLoadData()
             }, failureBlock = {
                 stopShimmer()
+                showErrorSnackbar(it.errorMessage)
                 onFinishLoadData()
             }
         ) { state ->
@@ -119,6 +117,13 @@ class WatchListFragment : Fragment(R.layout.fragment_watch_list) {
         with(binding.viewLoadingShimmer.shimmerLoading) {
             setVisible()
             startShimmer()
+        }
+    }
+
+    private fun showErrorSnackbar(message: String) {
+        (activity?.findViewById(android.R.id.content) as? View)?.let {
+            view?.showErrorSnackbar(message)
+
         }
     }
 

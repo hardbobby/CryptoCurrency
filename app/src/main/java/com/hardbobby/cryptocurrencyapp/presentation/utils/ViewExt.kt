@@ -8,6 +8,7 @@ import android.view.animation.TranslateAnimation
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.hardbobby.cryptocurrencyapp.R
 
@@ -99,5 +100,20 @@ fun TextView.changeTextColor(
         this.setTextColor(ContextCompat.getColor(this.context, R.color.red_700))
     } else if (predicate2()) {
         this.setTextColor(ContextCompat.getColor(this.context, R.color.green_jade))
+    }
+}
+
+fun View.showErrorSnackbar(message: String,length: Int = Snackbar.LENGTH_LONG) {
+    Snackbar.make(this, message, length).apply {
+        setBackgroundTint(ContextCompat.getColor(this.context, R.color.red_pome))
+        show()
+    }
+}
+
+
+fun View.showSuccessSnackbar(message: String,length: Int = Snackbar.LENGTH_LONG) {
+    Snackbar.make(this, message, length).apply {
+        setBackgroundTint(ContextCompat.getColor(this.context, R.color.green_jade))
+        show()
     }
 }
