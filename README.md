@@ -2,14 +2,15 @@
 
 Android App using CryptoCompare DB
 
-<img src="https://user-images.githubusercontent.com/8085770/133934015-38303613-4c13-485a-9ebe-91deb1807b6e.png" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/8085770/133934015-38303613-4c13-485a-9ebe-91deb1807b6e.png">
 
 ## Description
 
-a simple app that contains some basic functionality. It connects to the Crypto Real Time DB API.
+A simple app that contains some basic functionality. It connects to the Crypto Real Time DB API.
 
 
 ## Tech Stack
+- MVVM Architecture
 - Hilt - Used to provide dependency injection
 - Retrofit 2 - OkHttp3 - request/response API
 - Coroutines - reactive programming paradigm
@@ -18,10 +19,8 @@ a simple app that contains some basic functionality. It connects to the Crypto R
 - Single Activity Component
 - NDK Cmake Keys Security
 - Gradle Management Dependency
-- Room - Used to provide cache database
+- Room - Used to provide cache database on Watch List and Data Feed
 - Multi Module Layer
--
 
 ## Architecure Overview
-
-<img src="https://user-images.githubusercontent.com/8085770/133979726-b21cfe3a-7f12-4f69-99b4-ded8c50f8e2d.png" style="background-color:white">
+<img src="https://user-images.githubusercontent.com/8085770/133999315-bb7db71d-c324-472f-b8e5-25aea1d522d8.png">
